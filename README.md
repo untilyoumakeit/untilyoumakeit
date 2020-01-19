@@ -1,3 +1,3 @@
 # until you make it 
 
-Zole generated blog
+Zole generated blog for random stuff
