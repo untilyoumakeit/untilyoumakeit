@@ -1,0 +1,9 @@
+$font-family-monospace: Fira Mono, Roboto Mono, Menlo, Monaco, Lucida Console, Liberation Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+
+body {
+  font-family: $font-family-monospace;
+}
+
+.hack, .hack blockquote, .hack code, .hack em, .hack h1, .hack h2, .hack h3, .hack h4, .hack h5, .hack h6, .hack strong {
+  font-family: $font-family-monospace;
+}

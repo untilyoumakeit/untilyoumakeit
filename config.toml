@@ -1,0 +1,48 @@
+# The URL the site will be built for
+base_url = "https://untilyoumakeit.github.io/"
+
+# Naming
+title = "#untilyoumakeit"
+description = "From time to time blog"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to do syntax highlighting
+highlight_code = true
+# Which theme to use for the code highlighting.
+highlight_theme = "dracula"
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+# Whether to generate a RSS feed automatically
+generate_rss = false
+
+# THEME
+theme = "after-dark"
+
+taxonomies = [
+    # You can enable/disable RSS
+    {name = "categories", rss = true},
+    {name = "tags", rss = true},
+]
+
+[extra]
+
+# Fix bug in render
+taxonomies = [
+    # You can enable/disable RSS
+    {name = "categories", rss = true},
+    {name = "tags", rss = true},
+]
+
+
+after_dark_title = "#untilyoumakeit"
+author = "makadaw"
+# After dark menu
+after_dark_menu = [
+    {url = "$BASE_URL", name = "Home"},
+    {url = "$BASE_URL/categories", name = "Categories"},
+    {url = "$BASE_URL/tags", name = "Tags"},
+]
