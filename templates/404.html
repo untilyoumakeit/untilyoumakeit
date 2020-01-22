@@ -1,0 +1,22 @@
+{% extends "single.html" %}
+
+{% block header %}
+    {# Replicate Header  #}
+    {% if config.extra.after_dark_menu %}
+        <header>
+            <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+                <a itemprop="url"
+                   href="{{ config.base_url }}">
+                    <span itemprop="name"> Home
+                    </span></a>
+            </nav>
+        </header>
+    {% endif %}
+{% endblock header %}
+
+{% block content_body %}
+    <content class="hack">
+    <br/>404, nothing here :(
+    </content>
+{% endblock %}
+

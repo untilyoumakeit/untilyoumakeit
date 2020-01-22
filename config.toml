@@ -17,7 +17,7 @@ highlight_theme = "dracula"
 build_search_index = true
 
 # Whether to generate a RSS feed automatically
-generate_rss = false
+generate_rss = true
 
 # THEME
 theme = "after-dark"
@@ -42,7 +42,8 @@ after_dark_title = "#untilyoumakeit"
 author = "makadaw"
 # After dark menu
 after_dark_menu = [
-    {url = "$BASE_URL", name = "Home"},
+    {url = "$BASE_URL", name = "Blog"},
     {url = "$BASE_URL/categories", name = "Categories"},
     {url = "$BASE_URL/tags", name = "Tags"},
+    {url = "$BASE_URL/rss.xml", name = "RSS"},
 ]
