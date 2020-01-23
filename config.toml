@@ -45,5 +45,6 @@ after_dark_menu = [
     {url = "$BASE_URL", name = "Blog"},
     {url = "$BASE_URL/categories", name = "Categories"},
     {url = "$BASE_URL/tags", name = "Tags"},
+    {url = "$BASE_URL/books", name = "Books"},
     {url = "$BASE_URL/rss.xml", name = "RSS"},
 ]
