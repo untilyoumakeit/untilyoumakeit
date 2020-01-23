@@ -1,4 +1,5 @@
 {% import "post_macros.html" as post_macros %}
+{% import "index_macros.html" as index_macros %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +19,14 @@
       {% block css %}
           <link rel="stylesheet" href="{{ get_url(path="site.css", trailing_slash=false) | safe }}">
       {% endblock css %}
+      {% if config.generate_rss %}
+          <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml") | safe }}">
+      {% endif %}
+
+      {% if config.build_search_index %}
+        <script defer type="text/javascript" src="{{ get_url(path="elasticlunr.min.js") }}"></script>
+        <script defer type="text/javascript" src="{{ get_url(path="search_index.en.js") }}"></script>
+      {% endif %}
 
       {% block extra_head %}
       {% endblock extra_head %}
@@ -26,19 +35,7 @@
     <body class="hack dark main container">
         {% block content %}
             {% block header %}
-                {% if config.extra.after_dark_menu %}
-                    <header>
-                        <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
-                        {% for item in config.extra.after_dark_menu %}
-                            <a itemprop="url"
-                               class="{% if item.url | replace(from="$BASE_URL", to=config.base_url) == current_url %}active{% endif %}"
-                               href="{{ item.url | safe | replace(from="$BASE_URL", to=config.base_url) }}">
-                                <span itemprop="name">{{ item.name }}
-                                </span></a>
-                        {% endfor %}
-                        </nav>
-                    </header>
-                {% endif %}
+                {{ index_macros::navbar() }} 
             {% endblock header %}
 
             <main>
