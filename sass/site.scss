@@ -1,3 +1,34 @@
 @import "_overrides";
 @import "../themes/after-dark/sass/vendor";
 @import "../themes/after-dark/sass/theme";
+
+figure {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    margin: 25px 0;
+}
+
+figure.left img {
+    align-self: start;
+}
+figure.center img {
+    align-self: center;
+}
+figure.right img {
+    align-self: end;
+}
+
+figure figcaption {
+ margin-top:5px;
+}
+figure figcaption.left {
+ text-align:left
+}
+figure figcaption.center {
+ text-align:center
+}
+figure figcaption.right {
+ text-align:right
+}
+
