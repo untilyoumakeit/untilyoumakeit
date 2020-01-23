@@ -4,7 +4,7 @@ date = 2020-01-23
 
 [taxonomies]
 categories = ["books"]
-tags = []
+tags = ["psychology", "economics"]
 +++
 
 # Thinking, Fast and Slow
