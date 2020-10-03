@@ -2,7 +2,7 @@
 title = "Services for good"
 date = 2020-10-10
 [taxonomies]
-categories = [swift, development]
+categories = ["swift", "development"]
 tags = []
 +++		
 
