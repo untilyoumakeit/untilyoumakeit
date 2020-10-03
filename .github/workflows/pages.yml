@@ -1,17 +1,32 @@
-on: 
+on:
   push:
     branches:
-      - develop
-name: Build and deploy on push
+      - develop 
+  pull_request:
 jobs:
   build:
-    name: shalzz/zola-deploy-action
+    name: "Just build"
     runs-on: ubuntu-latest
+    if: github.ref != 'refs/heads/develop'
     steps:
-    - uses: actions/checkout@master
-    - name: shalzz/zola-deploy-action
-      uses: shalzz/zola-deploy-action@master
-      env:
-        PAGES_BRANCH: master
-        BUILD_DIR: .
-        TOKEN: ${{ secrets.TOKEN }}
+      - name: 'Checkout'
+        uses: actions/checkout@master
+      - name: 'Build only' 
+        uses: shalzz/zola-deploy-action@master
+        env:
+          BUILD_DIR: .
+          TOKEN: ${{ secrets.TOKEN }}
+          BUILD_ONLY: true
+  build_and_deploy:
+    name: "Build and deploy"
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/develop'
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@master
+      - name: 'Build and deploy'
+        uses: shalzz/zola-deploy-action@master
+        env:
+          PAGES_BRANCH: master
+          BUILD_DIR: .
+          TOKEN: ${{ secrets.TOKEN }}
